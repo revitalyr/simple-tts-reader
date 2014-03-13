@@ -110,15 +110,29 @@ namespace SimpleTTSReader
 			this.trbRate.Value = 0;
 		}
 
+    enum EnablerKey {
+      CapsLock, WindowsMenu
+    };
+
+    bool enabled () {
+      switch ((EnablerKey) lbEnablers.TopIndex) {
+        case EnablerKey.WindowsMenu:
+          return Keyboard.IsKeyDown (Key.LWin);
+        case EnablerKey.CapsLock:          
+          return Keyboard.IsKeyToggled (Key.CapsLock);
+      }
+      return false;
+    }
+
+    
 		protected override void WndProc(ref Message m)
 		{
 			switch (m.Msg)
 			{
 				case 0x0308: // WM_DRAWCLIPBOARD:
-          bool    enabled = Keyboard.IsKeyDown (Key.LWin);
           bool    passFurther = true;
 
-          if (this.cb_Active.Checked && !_firstRun && enabled) {
+          if (this.cb_Active.Checked && !_firstRun && enabled()) {
 
             if ( (_voice.Status.RunningState == SpeechRunState.SRSEIsSpeaking) || (btnPause.Text != "Pause") )
               btnPause_Click (null, null);
@@ -190,6 +204,10 @@ namespace SimpleTTSReader
 			Process.Start("http://simplettsreader.sourceforge.net/", null);
 		}
 
+    private void tssGitLink_Click (object sender, EventArgs e) {
+      Process.Start("https://github.com/revitalyr/simple-tts-reader.git", null);
+    }
+
 		private void MainForm_Shown(object sender, EventArgs e)
 		{
 			if (Program._hidden)
@@ -216,5 +234,6 @@ namespace SimpleTTSReader
         btnPause.Text = "Pause";
       }
     }
+
 	}
 }

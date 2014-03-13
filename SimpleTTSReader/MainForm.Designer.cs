@@ -45,6 +45,8 @@ namespace SimpleTTSReader
       this.tsslLink = new System.Windows.Forms.ToolStripStatusLabel();
       this.cb_Active = new System.Windows.Forms.CheckBox();
       this.btnPause = new System.Windows.Forms.Button();
+      this.lbEnablers = new System.Windows.Forms.ListBox();
+      this.tssGitLink = new System.Windows.Forms.ToolStripStatusLabel();
       ((System.ComponentModel.ISupportInitialize)(this.trbRate)).BeginInit();
       this.cms.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.trbVolume)).BeginInit();
@@ -64,7 +66,7 @@ namespace SimpleTTSReader
       // lblVolume
       // 
       this.lblVolume.AutoSize = true;
-      this.lblVolume.Location = new System.Drawing.Point(16, 186);
+      this.lblVolume.Location = new System.Drawing.Point(15, 155);
       this.lblVolume.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
       this.lblVolume.Name = "lblVolume";
       this.lblVolume.Size = new System.Drawing.Size(59, 17);
@@ -74,7 +76,7 @@ namespace SimpleTTSReader
       // btnTest
       // 
       this.btnTest.Location = new System.Drawing.Point(124, 246);
-      this.btnTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.btnTest.Margin = new System.Windows.Forms.Padding(4);
       this.btnTest.Name = "btnTest";
       this.btnTest.Size = new System.Drawing.Size(100, 28);
       this.btnTest.TabIndex = 0;
@@ -87,7 +89,7 @@ namespace SimpleTTSReader
       this.lbVoices.FormattingEnabled = true;
       this.lbVoices.ItemHeight = 16;
       this.lbVoices.Location = new System.Drawing.Point(16, 15);
-      this.lbVoices.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.lbVoices.Margin = new System.Windows.Forms.Padding(4);
       this.lbVoices.Name = "lbVoices";
       this.lbVoices.Size = new System.Drawing.Size(492, 100);
       this.lbVoices.TabIndex = 1;
@@ -97,7 +99,7 @@ namespace SimpleTTSReader
       // 
       this.trbRate.ContextMenuStrip = this.cms;
       this.trbRate.Location = new System.Drawing.Point(136, 123);
-      this.trbRate.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.trbRate.Margin = new System.Windows.Forms.Padding(4);
       this.trbRate.Minimum = -10;
       this.trbRate.Name = "trbRate";
       this.trbRate.Size = new System.Drawing.Size(373, 56);
@@ -120,8 +122,8 @@ namespace SimpleTTSReader
       // 
       // trbVolume
       // 
-      this.trbVolume.Location = new System.Drawing.Point(136, 186);
-      this.trbVolume.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.trbVolume.Location = new System.Drawing.Point(135, 155);
+      this.trbVolume.Margin = new System.Windows.Forms.Padding(4);
       this.trbVolume.Maximum = 100;
       this.trbVolume.Name = "trbVolume";
       this.trbVolume.Size = new System.Drawing.Size(373, 56);
@@ -133,7 +135,7 @@ namespace SimpleTTSReader
       // tbTest
       // 
       this.tbTest.Location = new System.Drawing.Point(232, 249);
-      this.tbTest.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.tbTest.Margin = new System.Windows.Forms.Padding(4);
       this.tbTest.MaxLength = 200;
       this.tbTest.Name = "tbTest";
       this.tbTest.Size = new System.Drawing.Size(276, 22);
@@ -151,7 +153,7 @@ namespace SimpleTTSReader
       // 
       this.btnAbout.DialogResult = System.Windows.Forms.DialogResult.Cancel;
       this.btnAbout.Location = new System.Drawing.Point(16, 246);
-      this.btnAbout.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.btnAbout.Margin = new System.Windows.Forms.Padding(4);
       this.btnAbout.Name = "btnAbout";
       this.btnAbout.Size = new System.Drawing.Size(100, 28);
       this.btnAbout.TabIndex = 7;
@@ -162,7 +164,8 @@ namespace SimpleTTSReader
       // statusStrip
       // 
       this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.tsslLink});
+            this.tsslLink,
+            this.tssGitLink});
       this.statusStrip.Location = new System.Drawing.Point(0, 293);
       this.statusStrip.Name = "statusStrip";
       this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
@@ -202,6 +205,27 @@ namespace SimpleTTSReader
       this.btnPause.UseVisualStyleBackColor = true;
       this.btnPause.Click += new System.EventHandler(this.btnPause_Click);
       // 
+      // lbEnablers
+      // 
+      this.lbEnablers.FormattingEnabled = true;
+      this.lbEnablers.ItemHeight = 16;
+      this.lbEnablers.Items.AddRange(new object[] {
+            "CapsLock",
+            "WindowsMenu"});
+      this.lbEnablers.Location = new System.Drawing.Point(232, 218);
+      this.lbEnablers.Name = "lbEnablers";
+      this.lbEnablers.Size = new System.Drawing.Size(276, 20);
+      this.lbEnablers.TabIndex = 11;
+      // 
+      // tssGitLink
+      // 
+      this.tssGitLink.IsLink = true;
+      this.tssGitLink.Name = "tssGitLink";
+      this.tssGitLink.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+      this.tssGitLink.Size = new System.Drawing.Size(233, 20);
+      this.tssGitLink.Text = "github.com.simple-tts-reader.git";
+      this.tssGitLink.Click += new System.EventHandler(this.tssGitLink_Click);
+      // 
       // MainForm
       // 
       this.AcceptButton = this.btnTest;
@@ -209,6 +233,7 @@ namespace SimpleTTSReader
       this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
       this.CancelButton = this.btnAbout;
       this.ClientSize = new System.Drawing.Size(525, 318);
+      this.Controls.Add(this.lbEnablers);
       this.Controls.Add(this.btnPause);
       this.Controls.Add(this.cb_Active);
       this.Controls.Add(this.statusStrip);
@@ -222,7 +247,7 @@ namespace SimpleTTSReader
       this.Controls.Add(this.lbVoices);
       this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
       this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-      this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+      this.Margin = new System.Windows.Forms.Padding(4);
       this.MaximizeBox = false;
       this.Name = "MainForm";
       this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -257,5 +282,7 @@ namespace SimpleTTSReader
 		private System.Windows.Forms.ToolStripStatusLabel tsslLink;
     private System.Windows.Forms.CheckBox cb_Active;
     private System.Windows.Forms.Button btnPause;
+    private System.Windows.Forms.ListBox lbEnablers;
+    private System.Windows.Forms.ToolStripStatusLabel tssGitLink;
 	}
 }

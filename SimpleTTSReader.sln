@@ -1,5 +1,5 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
+Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Express 2012 for Windows Desktop
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SimpleTTSReader", "SimpleTTSReader\SimpleTTSReader.csproj", "{84168945-10F9-4C61-8FFB-CD3026B61C27}"
 EndProject

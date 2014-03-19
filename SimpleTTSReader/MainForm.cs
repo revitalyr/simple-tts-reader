@@ -106,15 +106,18 @@ namespace SimpleTTSReader
 		}
 
     enum EnablerKey {
-      CapsLock, WindowsMenu
+      Space, CapsLock, WindowsMenu
     };
 
     bool enabled () {
       switch ((EnablerKey) lbEnablers.TopIndex) {
         case EnablerKey.WindowsMenu:
           return Keyboard.IsKeyDown (Key.LWin);
-        case EnablerKey.CapsLock:          
+        case EnablerKey.CapsLock:
           return Keyboard.IsKeyToggled (Key.CapsLock);
+        case EnablerKey.Space:
+          return Keyboard.IsKeyDown (Key.Space);
+
       }
       return false;
     }

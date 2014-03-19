@@ -43,10 +43,10 @@ namespace SimpleTTSReader
       this.btnAbout = new System.Windows.Forms.Button();
       this.statusStrip = new System.Windows.Forms.StatusStrip();
       this.tsslLink = new System.Windows.Forms.ToolStripStatusLabel();
+      this.tssGitLink = new System.Windows.Forms.ToolStripStatusLabel();
       this.cb_Active = new System.Windows.Forms.CheckBox();
       this.btnPause = new System.Windows.Forms.Button();
       this.lbEnablers = new System.Windows.Forms.ListBox();
-      this.tssGitLink = new System.Windows.Forms.ToolStripStatusLabel();
       ((System.ComponentModel.ISupportInitialize)(this.trbRate)).BeginInit();
       this.cms.SuspendLayout();
       ((System.ComponentModel.ISupportInitialize)(this.trbVolume)).BeginInit();
@@ -182,6 +182,15 @@ namespace SimpleTTSReader
       this.tsslLink.Text = "simplettsreader.sourceforge.net";
       this.tsslLink.Click += new System.EventHandler(this.tsslLink_Click);
       // 
+      // tssGitLink
+      // 
+      this.tssGitLink.IsLink = true;
+      this.tssGitLink.Name = "tssGitLink";
+      this.tssGitLink.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
+      this.tssGitLink.Size = new System.Drawing.Size(233, 20);
+      this.tssGitLink.Text = "github.com.simple-tts-reader.git";
+      this.tssGitLink.Click += new System.EventHandler(this.tssGitLink_Click);
+      // 
       // cb_Active
       // 
       this.cb_Active.AutoSize = true;
@@ -210,21 +219,13 @@ namespace SimpleTTSReader
       this.lbEnablers.FormattingEnabled = true;
       this.lbEnablers.ItemHeight = 16;
       this.lbEnablers.Items.AddRange(new object[] {
+            "Space",
             "CapsLock",
             "WindowsMenu"});
       this.lbEnablers.Location = new System.Drawing.Point(232, 218);
       this.lbEnablers.Name = "lbEnablers";
       this.lbEnablers.Size = new System.Drawing.Size(276, 20);
       this.lbEnablers.TabIndex = 11;
-      // 
-      // tssGitLink
-      // 
-      this.tssGitLink.IsLink = true;
-      this.tssGitLink.Name = "tssGitLink";
-      this.tssGitLink.Padding = new System.Windows.Forms.Padding(10, 0, 0, 0);
-      this.tssGitLink.Size = new System.Drawing.Size(233, 20);
-      this.tssGitLink.Text = "github.com.simple-tts-reader.git";
-      this.tssGitLink.Click += new System.EventHandler(this.tssGitLink_Click);
       // 
       // MainForm
       // 
